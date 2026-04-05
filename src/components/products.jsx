@@ -43,7 +43,7 @@ export const products = [
   id: 1,
   name: "Classic Beef Burger",
   category: "Burger",
-  price: "৳ 750",
+  price: 750,
   description: "Juicy grilled beef patty with lettuce, tomato, and cheese",
   image: b1
 },

@@ -65,10 +65,10 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               className="text-gray-400 text-lg md:text-xl font-light mb-10 leading-relaxed max-w-xl"
             >
-              Experience the perfect harmony of flame-grilled perfection and artisanal crunch. 
+              Experience the perfect harmony of flame-grilled perfection and artisanal crunch.
               Gourmet ingredients, bold flavors, and a vibe that&apos;s purely electric.
             </motion.p>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,63 +103,94 @@ export default function Home() {
       {/* Category Section */}
       <CategorySection onCategoryChange={handleCategoryClick} />
 
-      <MostPopuler/>
+      <MostPopuler />
 
-    
+
 
       {/* Featured Dishes */}
-      <FeaturedDishes/>
+      <FeaturedDishes />
 
-      <ComboPackages/>
+      <ComboPackages />
 
       {/* Special Offers */}
-      <section className="py-24 bg-dark-lighter relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop" alt="" className="w-full h-full object-cover" />
+      <section className="py-12 md:py-24 bg-dark-lighter relative overflow-hidden">
+        {/* Background Subtle Image - Mobile-e opacity aro komano hoyeche */}
+        <div className="absolute top-0 right-0 w-full md:w-1/3 h-full opacity-5 md:opacity-10 pointer-events-none">
+          <img
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=2070&auto=format&fit=crop"
+            alt=""
+            className="w-full h-full object-cover"
+          />
         </div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="glass-card p-12 md:p-20 flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
-              <span className="bg-primary text-white text-[10px] font-bold px-4 py-1 rounded-full uppercase tracking-[0.3em] mb-6 inline-block">Limited Time Offer</span>
-              <h2 className="text-5xl md:text-7xl font-display font-bold mb-6">
+
+        <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+          {/* Glass Card: Mobile-e padding komano hoyeche (p-8) ebong text align center kora hoyeche */}
+          <div className="glass-card p-8 md:p-20 flex flex-col md:flex-row items-center gap-10 md:gap-12 rounded-[2.5rem] border border-white/5 bg-white/[0.02] backdrop-blur-xl">
+
+            {/* Text Content */}
+            <div className="flex-1 text-center md:text-left order-2 md:order-1">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="bg-primary/20 text-primary text-[9px] md:text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.2em] mb-4 md:mb-6 inline-block border border-primary/30"
+              >
+                Limited Time Offer
+              </motion.span>
+
+              <h2 className="text-4xl md:text-7xl font-display font-bold mb-4 md:mb-6 leading-tight">
                 Family Combo <br />
-                <span className="primary-gradient italic">40% OFF</span>
+                <span className="primary-gradient italic tracking-tighter">40% OFF</span>
               </h2>
-              <p className="text-gray-400 text-lg font-light mb-10 max-w-md">
-                Get 2 Monster Burgers, 1 Large Pizza, 4 Drinks, and a Dessert Platter at an unbeatable price.
+
+              <p className="text-gray-400 text-sm md:text-lg font-light mb-8 md:mb-10 max-w-sm mx-auto md:mx-0">
+                Get 2 Monster Burgers, 1 Large Pizza, 4 Drinks, and a Dessert Platter at an <span className="text-white font-medium">unbeatable price.</span>
               </p>
-              <Link to="/menu" className="btn-primary inline-flex items-center gap-2">
+
+              <Link to="/menu" className="btn-primary w-full md:w-auto flex items-center justify-center gap-2 py-4 px-8 rounded-2xl shadow-lg shadow-primary/20">
                 Claim Offer Now <ArrowRight size={20} />
               </Link>
             </div>
-            <div className="w-full md:w-1/2 relative">
+
+            {/* Image Section - Mobile-e eta agey ashbe (order-1) */}
+            <div className="w-full md:w-1/2 relative order-1 md:order-2">
               <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10"
+                animate={{
+                  y: [0, -15, 0],
+                  rotate: [0, 2, 0]
+                }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="relative z-10 px-4 md:px-0"
               >
                 <img
                   src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=2071&auto=format&fit=crop"
                   alt="Special Offer"
-                  className="rounded-3xl shadow-2xl border border-white/10"
+                  className="rounded-[2rem] md:rounded-3xl shadow-2xl border border-white/10 w-full object-cover aspect-[4/3] md:aspect-auto"
                   referrerPolicy="no-referrer"
                 />
+
+                {/* Floating Price Tag for Mobile (Unique Touch) */}
+                <div className="absolute -top-4 -right-2 md:top-10 md:-right-6 bg-primary text-black font-black w-16 h-16 md:w-20 md:h-20 rounded-full flex flex-col items-center justify-center rotate-12 shadow-xl text-xs md:text-sm">
+                  <span>ONLY</span>
+                  <span className="text-lg md:text-xl leading-none">$29</span>
+                </div>
               </motion.div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary rounded-full blur-[80px] opacity-30" />
+
+              {/* Glowing Effect - Mobile-e size optimize kora hoyeche */}
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 md:w-40 md:h-40 bg-primary rounded-full blur-[60px] md:blur-[80px] opacity-20" />
             </div>
+
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-   
+
 
       {/* Reservation Form */}
       <ReservationForm />
 
       {/* Blog Section */}
-      <Gallery/>
+      <Gallery />
 
       {/* Quick Stats / Highlights */}
       <section className="py-24 bg-dark">

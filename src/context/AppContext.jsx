@@ -62,7 +62,10 @@ export function AppProvider({ children }) {
 
   const clearCart = () => setCart([]);
 
-  const cartTotal = cart.reduce((acc, item) => acc + (item.offerPrice || item.price) * item.quantity, 0);
+  const cartTotal = cart.reduce(
+    (acc, item) => acc + (item.offerPrice || item.price || 0) * item.quantity,
+    0
+  );
   const cartCount = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');

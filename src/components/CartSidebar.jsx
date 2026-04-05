@@ -54,12 +54,12 @@ export default function CartSidebar({ isOpen, onClose }) {
                     </div>
                     <div className="flex-1">
                       <div className="flex justify-between mb-1">
-                        <h4 className="font-display font-bold">{item.taka}</h4>
+                        <h4 className="font-display font-bold">{item.name || item.Laziiz}</h4>
                         <button onClick={() => removeFromCart(item.id)} className="text-gray-600 hover:text-accent transition-colors">
                           <Trash2 size={16} />
                         </button>
                       </div>
-                      <p className="text-primary font-display font-bold mb-3">{item.offerPrice || item.price}</p>
+                      <p className="text-primary font-display font-bold mb-3">   {item.offerPrice || item.price}</p>
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-3 bg-white/5 rounded-lg px-2 py-1">
                           <button onClick={() => updateQuantity(item.id, -1)} className="hover:text-primary"><Minus size={14} /></button>
@@ -77,9 +77,9 @@ export default function CartSidebar({ isOpen, onClose }) {
               <div className="p-6 border-t border-white/5 bg-white/5 space-y-4">
                 <div className="flex justify-between items-center text-xl font-display font-bold">
                   <span>Total</span>
-                  <span className="text-primary">{cartTotal.toFixed(2)}</span>
+                  <span className="text-primary"> ৳{cartTotal.toFixed(2)}</span>
                 </div>
-                <button 
+                <button
                   onClick={handleCheckout}
                   className="btn-primary w-full flex items-center justify-center gap-2"
                 >

@@ -252,7 +252,7 @@ export default function Checkout() {
                             <img src={item.image} alt={item.taka} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" referrerPolicy="no-referrer" />
                           </div>
                           <div className="flex-grow">
-                            <h4 className="font-bold text-sm line-clamp-1">{item.taka}</h4>
+                            <h4 className="font-bold text-sm line-clamp-1">{item.name || item.Laziiz}</h4>
                             <p className="text-xs text-gray-500">Qty: {item.quantity}</p>
                           </div>
                           <div className="text-right">

@@ -44,7 +44,7 @@ export default function Contact() {
                   <label className="text-xs uppercase tracking-widest text-primary font-bold">Email Address</label>
                   <input
                     type="email"
-                    placeholder="your  email@gmail.com"
+                    placeholder="youremail@gmail.com"
                     className="w-full bg-white/5 border border-white/10 rounded-2xl px-4 py-3 focus:outline-none focus:border-primary transition-colors"
                   />
                 </div>
